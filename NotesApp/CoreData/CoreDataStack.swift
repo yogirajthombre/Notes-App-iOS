@@ -32,7 +32,7 @@ class CoreDataStack {
         guard managedContext.hasChanges else {return}
         do {
             try managedContext.save()
-        }catch let _ as NSError {
+        }catch _ as NSError {
             print("Error in saving the object .....")
         }
     }

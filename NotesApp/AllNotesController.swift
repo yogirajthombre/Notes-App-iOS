@@ -25,6 +25,10 @@ class AllNotesController : UIViewController,UITableViewDelegate,UITableViewDataS
         return 100
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.present(EditNotesController(), animated: true, completion: nil)
+    }
+    
     
     lazy var savedNotes : UITableView = {
         let tv = UITableView()

@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EditNotesController: UIViewController {
+    
+    var notesModel = [Note]()
     
     var notesTitle : UITextField = {
             let title = UITextField()
@@ -42,6 +44,7 @@ class ViewController: UIViewController {
             button.titleLabel?.textColor = UIColor.white
             button.titleLabel?.font = UIFont(name: "GillSans", size: 24)
             button.backgroundColor = .black
+            button.addTarget(self, action: #selector(saveNotes), for: .touchUpInside)
             return button
     }()
 
@@ -75,6 +78,15 @@ class ViewController: UIViewController {
         view.addSubview(notesTitle)
         view.addSubview(notesContent)
         view.addSubview(saveButton)
+    }
+    
+    @objc func saveNotes(_sender : UIButton?){
+        print("The note is saved successfully ....")
+        let managedContext = AppDelegate.coreDataStack.managedContext
+        let newNote = Note(context: managedContext)
+        newNote.setValue(Date(), forKey: "editDate")
+        newNote.setValue(notesContent.text, forKey: "noteText")
+        newNote.setValue(notesTitle.text, forKey: "noteTitle")
     }
 
 }
