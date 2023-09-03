@@ -13,7 +13,11 @@ class CustomTableViewCell : UITableViewCell {
     let cellView: UIView = {
            let view = UIView()
            view.backgroundColor = UIColor.red
-           view.layer.cornerRadius = 10
+           view.layer.cornerRadius = 20
+           view.layer.shadowColor = UIColor.red.cgColor
+           view.layer.shadowOpacity = 1
+           view.layer.shadowOffset = CGSize(width: 5, height: 5)
+           view.layer.shadowRadius = 10
            view.translatesAutoresizingMaskIntoConstraints = false
            return view
     }()
@@ -21,7 +25,7 @@ class CustomTableViewCell : UITableViewCell {
     let dayLabel: UILabel = {
            let label = UILabel()
            label.textColor = UIColor.white
-           label.font = UIFont.boldSystemFont(ofSize: 24)
+           label.font = UIFont(name: "GillSans-Bold", size: 32)
            label.translatesAutoresizingMaskIntoConstraints = false
            return label
     }()
@@ -43,16 +47,11 @@ class CustomTableViewCell : UITableViewCell {
         
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
-            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
-            cellView.heightAnchor.constraint(equalToConstant: 200),
+            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25),
+            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25),
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -20),
-        ])
-        
-        NSLayoutConstraint.activate([
-            dayLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant:3),
-            dayLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 10),
-            dayLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor,constant: 3)
+            dayLabel.topAnchor.constraint(equalTo: self.topAnchor,constant: 50),
+            dayLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor,constant: 20),
         ])
         
     }
