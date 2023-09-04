@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		619166892AA4D9C8008809B9 /* KMPlaceholderTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 619166882AA4D9C8008809B9 /* KMPlaceholderTextView */; };
 		619B2F9C2A8F629E0005A2FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619B2F9B2A8F629E0005A2FC /* AppDelegate.swift */; };
 		619B2F9E2A8F629E0005A2FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619B2F9D2A8F629E0005A2FC /* SceneDelegate.swift */; };
 		619B2FA02A8F629E0005A2FC /* EditNotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619B2F9F2A8F629E0005A2FC /* EditNotesController.swift */; };
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				619166892AA4D9C8008809B9 /* KMPlaceholderTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +111,9 @@
 			dependencies = (
 			);
 			name = NotesApp;
+			packageProductDependencies = (
+				619166882AA4D9C8008809B9 /* KMPlaceholderTextView */,
+			);
 			productName = NotesApp;
 			productReference = 619B2F982A8F629E0005A2FC /* NotesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +142,9 @@
 				Base,
 			);
 			mainGroup = 619B2F8F2A8F629E0005A2FC;
+			packageReferences = (
+				619166872AA4D9C7008809B9 /* XCRemoteSwiftPackageReference "KMPlaceholderTextView" */,
+			);
 			productRefGroup = 619B2F992A8F629E0005A2FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -388,6 +396,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		619166872AA4D9C7008809B9 /* XCRemoteSwiftPackageReference "KMPlaceholderTextView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MoZhouqi/KMPlaceholderTextView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		619166882AA4D9C8008809B9 /* KMPlaceholderTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 619166872AA4D9C7008809B9 /* XCRemoteSwiftPackageReference "KMPlaceholderTextView" */;
+			productName = KMPlaceholderTextView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		61CF1A4A2A93433D00378474 /* Notes.xcdatamodeld */ = {
